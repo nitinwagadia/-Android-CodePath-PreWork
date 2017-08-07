@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.a2do.list.a2do.EditActivity">
+
+    <TextView
+        android:id="@+id/text_view_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/item_edit_text"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/item_edit_text"
+        android:layout_marginTop="39dp"
+        android:text="Edit Item Below"
+        android:textSize="35dp" />
+
+    <EditText
+        android:id="@+id/item_edit_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/text_view_label"
+        android:layout_marginLeft="18dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="18dp"
+        android:hint="New item name"
+        android:ems="10"
+        android:inputType="text" />
+
+    <Button
+        android:id="@+id/sumbit_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Sumbit"
+        android:onClick="Submit"
+        android:layout_below="@+id/item_edit_text"
+        android:layout_alignLeft="@+id/item_edit_text"
+        android:layout_alignStart="@+id/item_edit_text" />
+</RelativeLayout>
