@@ -3,18 +3,19 @@ package com.a2do.list.a2do.database;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
-import android.database.DatabaseErrorHandler;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import com.a2do.list.a2do.Util.Utils;
 import com.a2do.list.a2do.models.ItemType;
 import com.a2do.list.a2do.models.ToDoItem;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
-
-import static android.R.attr.version;
+import java.util.Locale;
 
 /**
  * Created by Nitin on 8/7/2017.
@@ -78,7 +79,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     item.set_priority(cursor.getString(cursor.getColumnIndex(PROP_PRIORITY)));
                     item.set_status(cursor.getString(cursor.getColumnIndex(PROP_STATUS)));
                     item.set_task_notes(cursor.getString(cursor.getColumnIndex(PROP_TASK_NOTES)));
-                    item.set_dueDate(new Date());
+                    item.set_dueDate(Utils.getDate(cursor.getString(cursor.getColumnIndex(PROP_DUE_DATE))));
                     items.add(item);
                 }
                 readableDatabase.setTransactionSuccessful();

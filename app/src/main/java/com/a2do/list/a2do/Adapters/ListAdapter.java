@@ -46,19 +46,12 @@ public class ListAdapter extends ArrayAdapter<ToDoItem> {
         ToDoItem item = getItem(position);
         viewholder.itemNameTextView.setText(item.get_activity_name());
         viewholder.priorityTextView.setText(item.get_priority());
-        if (item.get_status().equalsIgnoreCase("low"))
+        if (item.get_priority().equalsIgnoreCase("low"))
             viewholder.priorityTextView.setBackgroundResource(android.R.color.holo_green_light);
-        else if (item.get_status().equalsIgnoreCase("medium"))
+        else if (item.get_priority().equalsIgnoreCase("medium"))
             viewholder.priorityTextView.setBackgroundResource(android.R.color.holo_blue_bright);
         else
             viewholder.priorityTextView.setBackgroundResource(android.R.color.holo_red_light);
-
-        /*viewholder.listItemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });*/
 
         return convertView;
     }
